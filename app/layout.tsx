@@ -4,8 +4,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TwitterIcon from "@/components/twitter";
 import VerifiedIcon from "@/components/verified";
-import { TOTAL } from "@/constants";
 import GithubIcon from "@/components/github";
+import { TOTAL } from "@/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,44 +22,47 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`md:w-1/2 max-w-full flex flex-col min-h-screen mx-auto py-2 ${inter.className}`}
+        className={`mx-auto flex max-w-full flex-col py-2 md:w-1/2 ${inter.className}`}
       >
-        <div className="py-2">
+        <div className="px-8 pb-2">
           <a
             href=""
-            className="text-xl font-semibold hover:underline underline-offset-2"
+            className="text-xl font-semibold underline-offset-2 hover:underline"
           >
             highlights
           </a>
-          <p className="font-light text-sm">{TOTAL} tweets</p>
+          <p className="text-sm font-light">{TOTAL} tweets</p>
         </div>
         <Image
           src="/background-large.jpg"
           alt="background image"
-          width={800}
-          height={300}
+          className="aspect-[3/1] w-full object-cover"
+          width={500}
+          height={500}
         />
-        <section className="w-full grid gap-y-1 -translate-y-1/3 transform px-8">
-          <div className=" flex w-full justify-between items-end py-2">
-            <Image
-              src="https://unavatar.io/x/byt3h3ad"
-              alt="avatar"
-              width={150}
-              height={150}
-              className="rounded-full border-4 aspect-square"
-              priority={true}
-            />
+        <section className="grid w-full -translate-y-1/4 gap-y-1 px-4 md:px-8">
+          <div className="flex w-full items-end justify-between py-2">
+            <div className="w-24 md:w-28">
+              <Image
+                src="https://unavatar.io/x/byt3h3ad"
+                alt="avatar"
+                className="aspect-square rounded-full border-4 object-cover"
+                width={400}
+                height={400}
+                priority={true}
+              />
+            </div>
             <a
               href="https://twitter.com/intent/follow?screen_name=byt3h3ad"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:no-underline border-transparent focus:border-slate-50 outline-transparent focus-visible:border-slate-50 hover:border-slate-50 border-2 rounded-full flex gap-x-1 items-center text-white bg-[#187fc5] px-3 py-1"
+              className="flex items-center gap-x-1 rounded-full border-2 border-transparent bg-[#187fc5] px-3 py-1 text-sm text-white outline-transparent hover:border-slate-50 hover:no-underline focus:border-slate-50 focus-visible:border-slate-50"
             >
               <span className="font-bold">Follow</span>
               <TwitterIcon />
             </a>
           </div>
-          <h1 className="text-bold text-3xl flex gap-x-2 items-center">
+          <h1 className="flex items-center gap-x-2 text-2xl">
             adhiraj
             <VerifiedIcon />
           </h1>
@@ -67,12 +70,12 @@ export default function RootLayout({
             href="https://x.com/byt3h3ad"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm hover:underline underline-offset-2 font-extralight"
+            className="text-sm font-extralight text-[#8b98a5] underline-offset-2 hover:underline"
           >
             @byt3h3ad
           </a>
-          <p className="text-lg">nerd. i like building stuff.</p>
-          <ul className="flex flex-wrap gap-x-2 justify-around py-2">
+          <p className="py-2 font-light">nerd. i like building stuff.</p>
+          <ul className="flex flex-wrap justify-around gap-x-2 font-extralight text-[#8b98a5]">
             <li className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +96,7 @@ export default function RootLayout({
               </svg>
               <p>Available</p>
             </li>
-            <li className="flex space-x-2 items-center">
+            <li className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -137,7 +140,7 @@ export default function RootLayout({
                 href="https://adhiraj.me/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline underline-offset-2 text-[#1d9bf0]"
+                className="text-[#1d9bf0] underline-offset-2 hover:underline"
               >
                 adhiraj.me
               </a>
@@ -154,18 +157,18 @@ export default function RootLayout({
                   d="M208 36h-28V24a4 4 0 0 0-8 0v12H84V24a4 4 0 0 0-8 0v12H48a12 12 0 0 0-12 12v160a12 12 0 0 0 12 12h160a12 12 0 0 0 12-12V48a12 12 0 0 0-12-12M48 44h28v12a4 4 0 0 0 8 0V44h88v12a4 4 0 0 0 8 0V44h28a4 4 0 0 1 4 4v36H44V48a4 4 0 0 1 4-4m160 168H48a4 4 0 0 1-4-4V92h168v116a4 4 0 0 1-4 4m-72-80a8 8 0 1 1-8-8a8 8 0 0 1 8 8m44 0a8 8 0 1 1-8-8a8 8 0 0 1 8 8m-88 40a8 8 0 1 1-8-8a8 8 0 0 1 8 8m44 0a8 8 0 1 1-8-8a8 8 0 0 1 8 8m44 0a8 8 0 1 1-8-8a8 8 0 0 1 8 8"
                 />
               </svg>
-              <p className="text-sm font-light">Joined June 2024</p>
+              <p>Joined June 2024</p>
             </li>
           </ul>
         </section>
-        {children}
-        <footer className="flex justify-center pb-6 group">
+        <section className="px-2 md:px-0">{children}</section>
+        <footer className="flex justify-center pb-6">
           <a
             href="https://github.com/byt3h3ad/highlights"
-            className="text-2xl flex items-center gap-x-2"
+            className="group flex items-center gap-x-2 text-2xl"
           >
             <GithubIcon />
-            <span className="text-sm group-hover:underline underline-offset-1">
+            <span className="text-sm underline-offset-1 group-hover:underline">
               byt3h3ad
             </span>
           </a>
