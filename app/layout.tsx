@@ -164,7 +164,8 @@ export default function RootLayout({
         <section className="px-2 md:px-0">{children}</section>
         <footer className="flex justify-center pb-6">
           <a
-            href="https://github.com/byt3h3ad/highlights"
+            href="https://git.new/highlights"
+            target="_blank"
             className="group flex items-center gap-x-2 text-2xl"
           >
             <GithubIcon />
