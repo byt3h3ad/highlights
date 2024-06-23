@@ -10,6 +10,7 @@ export const TWEETS: Tweet[] = [
   { id: "1797837887003881563" },
   { id: "1797356420570173726" },
   { id: "1797181320717799532" },
+  { id: "1665852089044443136" },
 ];
 
 export const TOTAL: number = TWEETS.length;
